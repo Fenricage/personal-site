@@ -10,6 +10,10 @@ import LinkButton from '../ui-kit/LinkButton.js';
 
 const projects = [
   {
+    name: 'РЖД Витрина',
+    link: 'https://mp.rzd.ru/',
+  },
+  {
     name: 'LETSGO (NFT Marketplace)',
     link: 'https://letsgo.finance/',
   },
@@ -126,7 +130,7 @@ const IndexPage = ({ location }) => {
             I pay special attention to scaling and code maintenance.
           </p>
           <p>
-            My main stack is React, Redux Toolkit, Cypress, React Testing Library.
+            My main stack is React, Typescript, Redux Toolkit, Cypress, React Testing Library.
           </p>
         </Block>
       </BlockAnimatedContainer>
