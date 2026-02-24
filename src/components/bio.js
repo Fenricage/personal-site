@@ -17,14 +17,7 @@ const Bio = () => {
           author {
             name
             summary
-          }                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
-                    }}
-                    itemProp="description"
-                  />
-                </section>
+          }
           social {
             twitter
           }
