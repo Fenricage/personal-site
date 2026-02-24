@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropsWithChildren} from 'react';
 import { Transition } from 'react-transition-group';
 import styled from 'styled-components';
 
@@ -49,10 +49,15 @@ const BlockAnimationContainer = styled.div`
   }};
 `;
 
+
+type AnimatedItem = PropsWithChildren<{
+  animate: boolean
+}>
+
 export const IconAnimatedContainer = ({
   children,
   animate,
-}) => (
+}: AnimatedItem) => (
   <Transition in={animate} timeout={500}>
     {(state) => (
       // state change: exited -> entering -> entered -> exiting -> exited
@@ -66,7 +71,7 @@ export const IconAnimatedContainer = ({
 export const BlockAnimatedContainer = ({
   children,
   animate,
-}) => (
+}: AnimatedItem) => (
   <Transition in={animate} timeout={500}>
     {(state) => (
       // state change: exited -> entering -> entered -> exiting -> exited
