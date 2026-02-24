@@ -1,0 +1,9 @@
+node_modules
+public
+.cache
+dist
+*.d.ts
+**/__generated__/*
+**/*.min.js
+coverage
+.vscode

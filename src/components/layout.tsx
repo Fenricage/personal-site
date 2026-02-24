@@ -1,6 +1,6 @@
-import React from "react"
 import { Link } from "gatsby"
-import {ReactNode} from "react";
+import React, {ReactNode} from "react"
+
 import {Nullable} from "../types";
 
 type LayoutProps = {
