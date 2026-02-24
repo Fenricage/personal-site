@@ -1,9 +1,10 @@
 import React from "react"
 import { Link } from "gatsby"
 import {ReactNode} from "react";
+import {Nullable} from "../types";
 
 type LayoutProps = {
-    title: string;
+    title: Nullable<string>;
     children: ReactNode;
     location: Location;
 }
