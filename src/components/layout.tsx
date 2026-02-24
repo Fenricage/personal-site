@@ -1,10 +1,17 @@
-import * as React from "react"
+import React, {FC} from "react"
 import { Link } from "gatsby"
+import {ReactNode} from "react";
 
-const Layout = ({ location, title, children }) => {
+type LayoutProps = {
+    title: string;
+    children: ReactNode;
+    location: Location;
+}
+
+const Layout: FC<LayoutProps> = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
-  let header
+  let header: ReactNode
 
   if (isRootPath) {
     header = (

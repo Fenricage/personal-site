@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, FC } from 'react';
 import { useInterval } from 'ahooks';
 import styled from 'styled-components';
 import { Flex } from 'rebass';
+import {PageProps} from "gatsby"
 
-import Layout from '../components/layout.js';
-import Seo from '../components/seo.js';
-import { IconAnimatedContainer, BlockAnimatedContainer } from '../theme/components.js';
+import Layout from '../components/layout';
+import Seo from '../components/seo';
+import { IconAnimatedContainer, BlockAnimatedContainer } from '../theme/components';
 import LinkButton from '../ui-kit/LinkButton.js';
 
 const projects = [
@@ -84,13 +85,13 @@ const ListItem = styled.li`
   }
 `;
 
-const IndexPage = ({ location }) => {
+const IndexPage: FC<PageProps> = ({ location }) => {
   const [isWaveActivated, setWaveActivated] = useState(false);
   const [count, setCount] = useState(0);
 
   useInterval(() => {
     setCount((prev) => ++prev);
-  }, count < 5 ? 100 : null);
+  }, count < 5 ? 100 : undefined);
 
   useEffect(() => {
     setWaveActivated((prev) => !prev);
