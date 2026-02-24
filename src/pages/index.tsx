@@ -1,4 +1,4 @@
-import React, { useEffect, useState, FC } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useInterval } from 'ahooks';
 import styled from 'styled-components';
 import { Flex } from 'rebass';
@@ -85,7 +85,7 @@ const ListItem = styled.li`
   }
 `;
 
-const IndexPage: FC<PageProps> = ({ location }) => {
+const IndexPage = ({ location }: PageProps) => {
   const [isWaveActivated, setWaveActivated] = useState(false);
   const [count, setCount] = useState(0);
 
