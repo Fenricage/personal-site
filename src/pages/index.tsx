@@ -73,18 +73,18 @@ const Block = styled.section`
 `;
 
 const ListItem = styled.li`
+  display: flex;
+  align-items: center;
   list-style: none;
   line-height: 40px;
   position: relative;
-
-  &:before {
-    content: '🔸️';
-    top: 50%;
-    position: absolute;
-    transform: translateY(-50%);
-    left: -40px;
-  }
 `;
+
+const BulletIcon = styled.img`
+    width: 20px;
+    height: 20px;
+    margin-right: 16px;
+`
 
 const IndexPage = ({ location }: PageProps) => {
   const [isWaveActivated, setWaveActivated] = useState(false);
@@ -142,6 +142,7 @@ const IndexPage = ({ location }: PageProps) => {
           <List>
             {projects.map((p) => (
               <ListItem key={p.name}>
+                <BulletIcon src="orange-diamond.png"/>
                 <a href={p.link} target="_blank" rel="noreferrer">
                   {p.name}
                 </a>
@@ -156,6 +157,7 @@ const IndexPage = ({ location }: PageProps) => {
           <List>
             {contacts.map((p) => (
               <ListItem key={p.social}>
+                <BulletIcon src="orange-diamond.png"/>
                 <a href={p.link} target="_blank" rel="noreferrer">
                   {p.social}
                 </a>
