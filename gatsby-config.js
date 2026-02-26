@@ -122,5 +122,20 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        // Отключаем displayName в production для уменьшения размера
+        displayName: process.env.NODE_ENV !== 'production',
+        // Включаем SSR поддержку
+        ssr: true,
+        // Чистим мертвый код
+        pure: true,
+        // Убираем лишние комментарии
+        minify: process.env.NODE_ENV === 'production',
+        // Трансформируем имена классов для production
+        namespace: process.env.NODE_ENV === 'production' ? 'my-app' : undefined,
+      },
+    },
   ],
 }
