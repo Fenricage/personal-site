@@ -86,6 +86,11 @@ const BulletIcon = styled.img`
     margin-right: 16px;
 `
 
+const HelloIcon = styled.img`
+    width: 40px;
+    object-fit: contain;
+`
+
 const IndexPage = ({ location }: PageProps) => {
   const [isWaveActivated, setWaveActivated] = useState(false);
   const [count, setCount] = useState(0);
@@ -112,9 +117,7 @@ const IndexPage = ({ location }: PageProps) => {
           </span>
           <IconAnimatedContainer animate={isWaveActivated}>
             <Flex marginLeft="16px">
-              <span role="img" aria-label="wave emoji">
-                👋
-              </span>
+              <HelloIcon src="hello.png" alt=""/>
             </Flex>
           </IconAnimatedContainer>
         </Flex>
