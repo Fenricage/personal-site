@@ -128,20 +128,19 @@ const IndexPage = ({ location }: PageProps) => {
             My name is Protopopov Ruslan.
           </p>
           <p>
-            I'm a React front-end developer with a lot of experience. I love building complex interfaces
-            from simple, modular and tested components.
+            I'm a React frontend developer with extensive experience. I enjoy building complex interfaces from simple, modular, and well-tested components.
           </p>
           <p>
             I pay special attention to scaling and code maintenance.
           </p>
           <p>
-            My main stack is React, Typescript, Redux Toolkit, Cypress, React Testing Library.
+            My main tech stack is React, Typescript, Redux Toolkit, Cypress, React Testing Library.
           </p>
         </Block>
       </BlockAnimatedContainer>
       <BlockAnimatedContainer animate={count >= 2}>
         <Block>
-          <p>Here is a list of projects I have completed or been involved in:</p>
+          <p>Here is a list of projects that I have completed or been involved in:</p>
           <List>
             {projects.map((p) => (
               <ListItem key={p.name}>
