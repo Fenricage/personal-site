@@ -6,3 +6,8 @@ export const GlobalHeader = styled.div`
     justify-content: space-between;
     margin-bottom: var(--spacing-12);
 `
+
+export const LanguageButtonWrapper = styled.div`
+    display: flex;
+    margin-left: auto;
+`
