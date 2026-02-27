@@ -7,7 +7,7 @@ import {GlobalHeader} from "./controls";
 
 type LayoutProps = {
     title: Nullable<string>;
-    languageButton?: ReactNode
+    languageButton?: Nullable<ReactNode>
     children: ReactNode;
     location: Location;
 }
