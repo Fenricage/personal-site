@@ -1,0 +1,9 @@
+{
+  "index-intro": "Hey!",
+  "index-desc-1": "My name is Protopopov Ruslan.",
+  "index-desc-2": "I'm a React frontend developer with extensive experience. I enjoy building complex interfaces from simple, modular, and well-tested components.",
+  "index-desc-3": "I pay special attention to scaling and code maintenance.",
+  "index-desc-4": "My main tech stack is React, Typescript, Redux Toolkit, Cypress, React Testing Library.",
+  "index-list": "Here is a list of projects that I have completed or been involved in:",
+  "index-contacts": "Here is a list of my contacts:"
+}

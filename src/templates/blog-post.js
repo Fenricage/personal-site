@@ -1,8 +1,8 @@
-import * as React from "react"
 import { Link, graphql } from "gatsby"
+import * as React from "react"
 
 import Bio from "../components/bio"
-import Layout from "../components/layout"
+import Index from "../components/layout"
 import Seo from "../components/seo"
 
 const BlogPostTemplate = ({
@@ -12,7 +12,7 @@ const BlogPostTemplate = ({
   const siteTitle = site.siteMetadata?.title || `Title`
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Index location={location} title={siteTitle}>
       <article
         className="blog-post"
         itemScope
@@ -57,7 +57,7 @@ const BlogPostTemplate = ({
           </li>
         </ul>
       </nav>
-    </Layout>
+    </Index>
   )
 }
 

@@ -137,5 +137,13 @@ module.exports = {
         namespace: process.env.NODE_ENV === 'production' ? 'my-app' : undefined,
       },
     },
+    {
+      resolve: `gatsby-plugin-i18n`,
+      options: {
+        langKeyDefault: 'ru',     // Язык по умолчанию
+        useLangKeyLayout: false,  // Не создавать отдельные layouts для языков
+        prefixDefault: false,      // Не добавлять префикс к URL для языка по умолчанию (опционально)
+      },
+    },
   ],
 }

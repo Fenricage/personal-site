@@ -2,7 +2,7 @@ import {Link, graphql, PageProps} from "gatsby"
 import * as React from "react"
 
 import Bio from "../components/bio"
-import Layout from "../components/layout"
+import Index from "../components/layout"
 import Seo from "../components/seo"
 
 
@@ -15,19 +15,19 @@ const BlogIndex = ({ data, location }: PageProps<BlogPageQuery>) => {
 
   if (posts.length === 0) {
     return (
-      <Layout location={location} title={siteTitle}>
+      <Index location={location} title={siteTitle}>
         <Bio />
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
           directory you specified for the "gatsby-source-filesystem" plugin in
           gatsby-config.js).
         </p>
-      </Layout>
+      </Index>
     )
   }
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Index location={location} title={siteTitle}>
       <Bio />
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
@@ -70,7 +70,7 @@ const BlogIndex = ({ data, location }: PageProps<BlogPageQuery>) => {
           )
         })}
       </ol>
-    </Layout>
+    </Index>
   )
 }
 

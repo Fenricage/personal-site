@@ -1,11 +1,13 @@
 import { useInterval } from 'ahooks';
 import {PageProps} from "gatsby"
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
+import { useTranslation } from "react-i18next"
 import { Flex } from 'rebass';
 import styled from 'styled-components';
 
-import Layout from '../components/layout';
+import Index from '../components/layout';
 import Seo from '../components/seo';
+import {useLanguage} from "../features/i18n/useLanguage";
 import { IconAnimatedContainer, BlockAnimatedContainer } from '../theme/components';
 import LinkButton from '../ui-kit/LinkButton.js';
 
@@ -92,30 +94,37 @@ const HelloIcon = styled.img`
 `
 
 const IndexPage = ({ location }: PageProps) => {
-  const [isWaveActivated, setWaveActivated] = useState(false);
   const [count, setCount] = useState(0);
+
+  const { t } = useTranslation()
+  const {language} = useLanguage()
+
+  useEffect(() => {
+    setCount(0)
+  }, [language]);
 
   useInterval(() => {
     setCount((prev) => ++prev);
   }, count < 5 ? 100 : undefined);
 
-  useEffect(() => {
-    setWaveActivated((prev) => !prev);
-  }, []);
+
+
+  console.log(count, 'COUNT')
+
 
   return (
-    <Layout
+    <Index
       location={location}
       title={null}
     >
       <h1>
         <Flex>
           <span>
-            Hey!
+            {t('index-intro')}
             {' '}
             {' '}
           </span>
-          <IconAnimatedContainer animate={isWaveActivated}>
+          <IconAnimatedContainer animate={count >= 1}>
             <Flex marginLeft="16px">
               <HelloIcon src="hello.png" alt=""/>
             </Flex>
@@ -125,22 +134,22 @@ const IndexPage = ({ location }: PageProps) => {
       <BlockAnimatedContainer animate={count >= 1}>
         <Block>
           <p>
-            My name is Protopopov Ruslan.
+            {t('index-desc-1')}
           </p>
           <p>
-            I'm a React frontend developer with extensive experience. I enjoy building complex interfaces from simple, modular, and well-tested components.
+            {t('index-desc-2')}
           </p>
           <p>
-            I pay special attention to scaling and code maintenance.
+            {t('index-desc-3')}
           </p>
           <p>
-            My main tech stack is React, Typescript, Redux Toolkit, Cypress, React Testing Library.
+            {t('index-desc-4')}
           </p>
         </Block>
       </BlockAnimatedContainer>
       <BlockAnimatedContainer animate={count >= 2}>
         <Block>
-          <p>Here is a list of projects that I have completed or been involved in:</p>
+          <p>{t('index-list')}</p>
           <List>
             {projects.map((p) => (
               <ListItem key={p.name}>
@@ -155,7 +164,7 @@ const IndexPage = ({ location }: PageProps) => {
       </BlockAnimatedContainer>
       <BlockAnimatedContainer animate={count >= 3}>
         <Block>
-          <p>Here is a list of my contacts:</p>
+          <p>{t('index-contacts')}</p>
           <List>
             {contacts.map((p) => (
               <ListItem key={p.social}>
@@ -187,7 +196,7 @@ const IndexPage = ({ location }: PageProps) => {
           </a>
         </Block>
       </BlockAnimatedContainer>
-    </Layout>
+    </Index>
   );
 };
 
