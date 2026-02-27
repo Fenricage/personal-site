@@ -99,9 +99,6 @@ const IndexPage = ({ location }: PageProps) => {
   const { t } = useTranslation()
   const {language} = useLanguage()
 
-  useEffect(() => {
-    setCount(0)
-  }, [language]);
 
   useInterval(() => {
     setCount((prev) => ++prev);
