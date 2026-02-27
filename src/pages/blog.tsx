@@ -27,7 +27,14 @@ const BlogIndex = ({ data, location }: PageProps<BlogPageQuery>) => {
   }
 
   return (
-    <Index location={location} title={siteTitle}>
+    <Index
+        location={location}
+        header={
+                <Link className="header-link-home" to="/">
+                  Back to home
+                </Link>
+        }
+    >
       <Bio />
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {

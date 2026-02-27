@@ -1,5 +1,5 @@
 import { useInterval } from 'ahooks';
-import {PageProps} from "gatsby"
+import {Link, PageProps} from "gatsby"
 import React, {useEffect, useState} from 'react';
 import { useTranslation } from "react-i18next"
 import { Flex } from 'rebass';
@@ -113,7 +113,6 @@ const IndexPage = ({ location }: PageProps) => {
   return (
     <Index
       location={location}
-      title={null}
       languageButton={<LanguageButton/>}
     >
       <h1>

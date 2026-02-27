@@ -6,13 +6,19 @@ import Index from "../components/layout"
 import Seo from "../components/seo"
 
 const BlogPostTemplate = ({
-  data: { previous, next, site, markdownRemark: post },
+  data: { previous, next, markdownRemark: post },
   location,
 }) => {
-  const siteTitle = site.siteMetadata?.title || `Title`
 
   return (
-    <Index location={location} title={siteTitle}>
+    <Index
+        location={location}
+        header={
+            <Link className="header-link-home" to="/blog">
+                Back to blog
+            </Link>
+        }
+    >
       <article
         className="blog-post"
         itemScope
