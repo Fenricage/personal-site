@@ -7,6 +7,7 @@ import styled from 'styled-components';
 
 import Index from '../components/layout';
 import Seo from '../components/seo';
+import {LanguageButton} from "../features/i18n/LanguageButton";
 import {useLanguage} from "../features/i18n/useLanguage";
 import { IconAnimatedContainer, BlockAnimatedContainer } from '../theme/components';
 import LinkButton from '../ui-kit/LinkButton.js';
@@ -113,6 +114,7 @@ const IndexPage = ({ location }: PageProps) => {
     <Index
       location={location}
       title={null}
+      languageButton={<LanguageButton/>}
     >
       <h1>
         <Flex>
