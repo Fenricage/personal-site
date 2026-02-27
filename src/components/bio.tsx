@@ -5,9 +5,10 @@
  * See: https://www.gatsbyjs.com/docs/how-to/querying-data/use-static-query/
  */
 
-import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+import * as React from "react"
+import {useTranslation} from "react-i18next";
 
 type BioData = GatsbyTypes.BioQueryQuery
 
@@ -32,6 +33,8 @@ const Bio = () => {
   const author = data.site?.siteMetadata?.author
   const social = data.site?.siteMetadata?.social
 
+    const {t} = useTranslation()
+
   return (
     <div className="bio">
       <StaticImage
@@ -46,11 +49,7 @@ const Bio = () => {
       />
       {author?.name && (
         <p>
-          Written by <strong>{author.name}</strong> {author?.summary || null}
-          {` `}
-          <a href={`https://twitter.com/${social?.twitter || ``}`}>
-            You should follow them on Twitter
-          </a>
+          {t('written-by')}
         </p>
       )}
     </div>

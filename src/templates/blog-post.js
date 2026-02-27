@@ -5,6 +5,7 @@ import {useTranslation} from "react-i18next";
 import Bio from "../components/bio"
 import Index from "../components/layout"
 import Seo from "../components/seo"
+import {LanguageButton} from "../features/i18n/LanguageButton";
 
 const BlogPostTemplate = ({
   data: { previous, next, markdownRemark: post },
@@ -16,6 +17,7 @@ const BlogPostTemplate = ({
   return (
     <Index
         location={location}
+        languageButton={<LanguageButton/>}
         header={
             <Link className="header-link-home" to="/blog">
                 {t('back-to-blog')}

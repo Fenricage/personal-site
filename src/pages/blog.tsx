@@ -19,7 +19,10 @@ const BlogIndex = ({ data, location }: PageProps<BlogPageQuery>) => {
 
   if (posts.length === 0) {
     return (
-      <Index location={location} title={siteTitle}>
+      <Index
+          location={location}
+          languageButton={<LanguageButton/>}
+      >
         <Bio />
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
