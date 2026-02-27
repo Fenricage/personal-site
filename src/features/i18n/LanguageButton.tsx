@@ -20,9 +20,9 @@ export const LanguageButton = () => {
     const {language, onClickLanguage} = useLanguage()
 
     if (language === 'ru') {
-        languageIcon =  <LanguageIcon src="russia_icon.png" />
+        languageIcon =  <LanguageIcon src="../russia_icon.png" />
     } else {
-        languageIcon = <LanguageIcon src="uk_icon.png" />
+        languageIcon = <LanguageIcon src="../uk_icon.png" />
     }
 
     return (

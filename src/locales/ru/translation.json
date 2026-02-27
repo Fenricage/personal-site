@@ -6,5 +6,7 @@
   "index-desc-4": "Мой основной стек это React, Typescript, Redux Toolkit, Cypress, React Testing Library.",
   "index-list": "Вот список продуктов которые я завершил или в которые был вовлечен:",
   "index-contacts": "Вот список моих контактов:",
-  "go-to-blog": "перейти в блог"
+  "go-to-blog": "перейти в блог",
+  "back-to-home": "На главную",
+  "back-to-blog": "К блогу"
 }

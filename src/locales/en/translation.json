@@ -6,5 +6,7 @@
   "index-desc-4": "My main tech stack is React, Typescript, Redux Toolkit, Cypress, React Testing Library.",
   "index-list": "Here is a list of projects that I have completed or been involved in:",
   "index-contacts": "Here is a list of my contacts:",
-  "go-to-blog": "go to blog"
+  "go-to-blog": "go to blog",
+  "back-to-home": "Back to home",
+  "back-to-blog": "Back to blog"
 }

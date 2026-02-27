@@ -1,5 +1,6 @@
 import { Link, graphql } from "gatsby"
 import * as React from "react"
+import {useTranslation} from "react-i18next";
 
 import Bio from "../components/bio"
 import Index from "../components/layout"
@@ -10,12 +11,14 @@ const BlogPostTemplate = ({
   location,
 }) => {
 
+    const {t} = useTranslation()
+
   return (
     <Index
         location={location}
         header={
             <Link className="header-link-home" to="/blog">
-                Back to blog
+                {t('back-to-blog')}
             </Link>
         }
     >

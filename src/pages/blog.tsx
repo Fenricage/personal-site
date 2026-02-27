@@ -1,9 +1,11 @@
 import {Link, graphql, PageProps} from "gatsby"
 import * as React from "react"
+import {useTranslation} from "react-i18next";
 
 import Bio from "../components/bio"
 import Index from "../components/layout"
 import Seo from "../components/seo"
+import {LanguageButton} from "../features/i18n/LanguageButton";
 
 
 
@@ -12,6 +14,8 @@ type BlogPageQuery = GatsbyTypes.BlogPageQuery
 const BlogIndex = ({ data, location }: PageProps<BlogPageQuery>) => {
   const siteTitle = data.site?.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
+
+    const {t} = useTranslation()
 
   if (posts.length === 0) {
     return (
@@ -29,9 +33,10 @@ const BlogIndex = ({ data, location }: PageProps<BlogPageQuery>) => {
   return (
     <Index
         location={location}
+        languageButton={<LanguageButton/>}
         header={
                 <Link className="header-link-home" to="/">
-                  Back to home
+                    {t('back-to-home')}
                 </Link>
         }
     >
