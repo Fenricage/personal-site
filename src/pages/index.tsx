@@ -176,7 +176,7 @@ const IndexPage = ({ location }: PageProps) => {
       </BlockAnimatedContainer>
       <BlockAnimatedContainer animate={count >= 4}>
         <LinkButton to="/blog">
-          Go to Blog
+          {t('go-to-blog')}
         </LinkButton>
       </BlockAnimatedContainer>
       <BlockAnimatedContainer animate={count >= 5}>
