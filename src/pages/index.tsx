@@ -1,6 +1,6 @@
 import { useInterval } from 'ahooks';
-import {Link, PageProps} from "gatsby"
-import React, {useEffect, useState} from 'react';
+import {PageProps} from "gatsby"
+import React, {useState} from 'react';
 import { useTranslation } from "react-i18next"
 import { Flex } from 'rebass';
 import styled from 'styled-components';
@@ -8,7 +8,6 @@ import styled from 'styled-components';
 import Index from '../components/layout';
 import Seo from '../components/seo';
 import {LanguageButton} from "../features/i18n/LanguageButton";
-import {useLanguage} from "../features/i18n/useLanguage";
 import { IconAnimatedContainer, BlockAnimatedContainer } from '../theme/components';
 import LinkButton from '../ui-kit/LinkButton.js';
 
@@ -98,7 +97,6 @@ const IndexPage = ({ location }: PageProps) => {
   const [count, setCount] = useState(0);
 
   const { t } = useTranslation()
-  const {language} = useLanguage()
 
 
   useInterval(() => {
