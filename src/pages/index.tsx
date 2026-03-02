@@ -113,6 +113,7 @@ const IndexPage = ({ location }: PageProps) => {
       location={location}
       languageButton={<LanguageButton/>}
     >
+      {/*<EastEgg/>*/}
       <h1>
         <Flex>
           <span>
