@@ -31,7 +31,6 @@ const Bio = () => {
 
   // Set these values by editing "siteMetadata" in gatsby-config.js
   const author = data.site?.siteMetadata?.author
-  const social = data.site?.siteMetadata?.social
 
     const {t} = useTranslation()
 
@@ -42,10 +41,11 @@ const Bio = () => {
         layout="fixed"
         formats={["auto", "webp", "avif"]}
         src="../images/profile-pic.png"
-        width={50}
-        height={50}
+        width={75}
+        height={75}
         quality={95}
         alt="Profile picture"
+        style={{ flexShrink: 0 }}
       />
       {author?.name && (
         <p>
