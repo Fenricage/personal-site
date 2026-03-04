@@ -1,6 +1,6 @@
 import { useInterval } from 'ahooks';
 import {PageProps} from "gatsby"
-import React, {useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import { useTranslation } from "react-i18next"
 import { Flex } from 'rebass';
 import styled from 'styled-components';
@@ -99,14 +99,25 @@ const IndexPage = ({ location }: PageProps) => {
 
   const { t } = useTranslation()
   const headerRef = useRef<HTMLElement>()
+  const easterEggRef = useRef<HTMLElement>()
 
   useInterval(() => {
     setCount((prev) => ++prev);
   }, count < 5 ? 100 : undefined);
 
 
-  const easterEggY = (headerRef?.current?.getBoundingClientRect()?.y ?? 0) + (headerRef?.current?.offsetHeight ?? 0)
+  const calculateEasterEggY = () => {
+    if(!headerRef?.current?.getBoundingClientRect()?.y || !headerRef?.current?.offsetHeight || !easterEggRef.current?.clientHeight) {
+      return 0
+    }
 
+    return headerRef.current.getBoundingClientRect().y + headerRef.current.offsetHeight - easterEggRef.current.clientHeight
+  }
+
+
+  const easterEggY = calculateEasterEggY()
+
+  console.log(easterEggY, 'easterEggY')
 
   return (
     <Index
@@ -114,7 +125,7 @@ const IndexPage = ({ location }: PageProps) => {
       languageButton={<LanguageButton/>}
       headerRef={headerRef}
     >
-      <EastEgg y={easterEggY}/>
+      <EastEgg y={easterEggY} wrapperRef={easterEggRef} />
       <h1>
         <Flex>
           <span>
