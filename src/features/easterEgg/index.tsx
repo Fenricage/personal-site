@@ -1,16 +1,25 @@
-import { StaticImage } from "gatsby-plugin-image"
 import React from 'react';
-import styled from "styled-components";
 
-const BallIcon = styled.img`
-    width: 40px;
-    height: 40px;
-`
+import easterEggImg from '../../images/ball.png'
+import {Nullable} from "../../types";
 
-export const EastEgg =  () => {
+import {BallIcon, Wrapper} from "./controls";
+
+type EasterEggProps = {
+    y: Nullable<number>;
+}
+
+export const EastEgg =  (props: EasterEggProps) => {
+
+    const {y} = props;
+
+    if(!y) {
+        return null
+    }
+
     return (
-        <div>
-            <img src="../../images/ball.png" />
-        </div>
+        <Wrapper y={y}>
+            <BallIcon src={easterEggImg} alt="easter egg"/>
+        </Wrapper>
     )
-}А
+}

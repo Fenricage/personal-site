@@ -1,12 +1,13 @@
 import { useInterval } from 'ahooks';
 import {PageProps} from "gatsby"
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 import { useTranslation } from "react-i18next"
 import { Flex } from 'rebass';
 import styled from 'styled-components';
 
 import Index from '../components/layout';
 import Seo from '../components/seo';
+import {EastEgg} from "../features/easterEgg";
 import {LanguageButton} from "../features/i18n/LanguageButton";
 import { IconAnimatedContainer, BlockAnimatedContainer } from '../theme/components';
 import LinkButton from '../ui-kit/LinkButton.js';
@@ -97,23 +98,23 @@ const IndexPage = ({ location }: PageProps) => {
   const [count, setCount] = useState(0);
 
   const { t } = useTranslation()
-
+  const headerRef = useRef<HTMLElement>()
 
   useInterval(() => {
     setCount((prev) => ++prev);
   }, count < 5 ? 100 : undefined);
 
 
-
-  console.log(count, 'COUNT')
+  const easterEggY = (headerRef?.current?.getBoundingClientRect()?.y ?? 0) + (headerRef?.current?.offsetHeight ?? 0)
 
 
   return (
     <Index
       location={location}
       languageButton={<LanguageButton/>}
+      headerRef={headerRef}
     >
-      {/*<EastEgg/>*/}
+      <EastEgg y={easterEggY}/>
       <h1>
         <Flex>
           <span>

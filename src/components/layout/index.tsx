@@ -1,4 +1,4 @@
-import React, {ReactNode} from "react"
+import React, {ReactNode, Ref} from "react"
 
 import {Nullable} from "../../types";
 
@@ -9,15 +9,16 @@ type LayoutProps = {
     header?: Nullable<ReactNode>;
     children: ReactNode;
     location: Location;
+    headerRef?: Ref<any>
 }
 
-const Index = ({ location, languageButton, header, children }: LayoutProps) => {
+const Index = ({ location, languageButton, header, children, headerRef }: LayoutProps) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
 
   return (
           <div className="global-wrapper" data-is-root-path={isRootPath}>
-              <GlobalHeader>
+              <GlobalHeader ref={headerRef}>
                   {header}
                   <LanguageButtonWrapper>
                       {languageButton}
