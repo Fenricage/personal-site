@@ -1,6 +1,6 @@
 import React, {Ref} from 'react';
 
-import easterEggImg from '../../images/ball.png'
+import easterEggImg from '../../images/tennis_ball.png'
 import {Nullable} from "../../types";
 
 import {BallIcon, Wrapper} from "./controls";

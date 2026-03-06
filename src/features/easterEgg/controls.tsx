@@ -18,6 +18,6 @@ export const Wrapper = styled.div<WrapperProps>`
       display: flex;
       top: ${props.y}px;
       transform: ${!props.y ? 'rotate(0deg)' : 'rotate(720deg)'};
-      transition: left ease 1000ms, transform ease 1000ms;
+      transition: left cubic-bezier(0.68, -0.6, 0.32, 1.5) 1400ms, transform cubic-bezier(0.68, -0.6, 0.32, 1.5) 1400ms;
   `}
 `;
