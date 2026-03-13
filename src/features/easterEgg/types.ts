@@ -1,1 +1,0 @@
-export type AnimationStatus = 'stop' | 'in' | 'out';

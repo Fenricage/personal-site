@@ -5,7 +5,6 @@ import easterEggImg from '../../images/tennis_ball.png'
 import {Nullable} from "../../types";
 
 import {BallIcon, Wrapper, CatPaw} from "./controls";
-import {AnimationStatus} from "./types";
 
 type EasterEggProps = {
     y: Nullable<number>;
@@ -15,25 +14,48 @@ type EasterEggProps = {
 export const EastEgg =  (props: EasterEggProps) => {
 
     const {y, wrapperRef} = props;
-
-    const [transitionIsOver, setTransitionIsOver] = useState(false)
-    const [catAnimationIsActive, setCatAnimationIsActive] = useState<AnimationStatus>('stop')
+    const [catAnimationIsActive, setCatAnimationIsActive] = useState<boolean>(false)
+    const [animationInitialized, setAnimationInitialized] = useState<boolean>(false)
+    const [ballTransitionIsEnd, setBallTransitionIsEnd] = useState<boolean>(false)
+    const [ballOutIsActive, setBallOutIsActive] = useState(false)
 
     const onMouseOverBall = () => {
-        if(!transitionIsOver) {
-            return
-        }
-        setCatAnimationIsActive('in')
+        setCatAnimationIsActive(true)
+        setAnimationInitialized(true)
     }
 
-    const onTransitionEndBall = () => {
-        setTransitionIsOver(true)
+    useEffect(() => {
+        if(!catAnimationIsActive) {
+            return
+        }
+
+        const timer = setTimeout(() => {
+            setCatAnimationIsActive(false)
+            setBallOutIsActive(true)
+        }, 350)
+
+        return () => {
+            return clearTimeout(timer)
+        }
+    }, [animationInitialized, catAnimationIsActive]);
+
+    const onBallTransitionEnd = () => {
+        setBallTransitionIsEnd(true)
     }
 
     return (
         <Wrapper y={y} ref={wrapperRef}>
-            <BallIcon onTransitionEnd={onTransitionEndBall} onMouseOver={onMouseOverBall} y={y} src={easterEggImg} alt="easter egg"/>
-            <CatPaw animateStatus={catAnimationIsActive} src={catPawImg} alt="cat paw"/>
+            <BallIcon
+                onTransitionEnd={onBallTransitionEnd}
+                disableEvents={animationInitialized || !ballTransitionIsEnd}
+                onMouseOver={onMouseOverBall}
+                onClick={onMouseOverBall}
+                y={y}
+                out={ballOutIsActive}
+                src={easterEggImg}
+                alt="easter egg"
+            />
+            <CatPaw animate={catAnimationIsActive} src={catPawImg} alt="cat paw"/>
         </Wrapper>
     )
 }
