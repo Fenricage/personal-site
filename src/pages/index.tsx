@@ -117,7 +117,7 @@ const IndexPage = ({ location }: PageProps) => {
 
   const easterEggY = calculateEasterEggY()
 
-  console.log(easterEggY, 'easterEggY')
+  console.log('DEPLOYED')
 
   return (
     <Index
