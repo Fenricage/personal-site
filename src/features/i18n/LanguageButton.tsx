@@ -1,7 +1,11 @@
 import React, {ReactNode} from "react";
 import styled from "styled-components";
 
+import russiaIcon from '../../images/russia_icon.png'
+import ukIcon from '../../images/uk_icon.png'
+
 import {useLanguage} from "./useLanguage";
+
 
 const WrapperButton = styled.button`
     background: transparent;
@@ -20,9 +24,9 @@ export const LanguageButton = () => {
     const {language, onClickLanguage} = useLanguage()
 
     if (language === 'ru') {
-        languageIcon =  <LanguageIcon src="../russia_icon.png" />
+        languageIcon =  <LanguageIcon src={russiaIcon} />
     } else {
-        languageIcon = <LanguageIcon src="../uk_icon.png" />
+        languageIcon = <LanguageIcon src={ukIcon} />
     }
 
     return (
