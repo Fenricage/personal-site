@@ -1,6 +1,6 @@
 import { useInterval } from 'ahooks';
 import {PageProps} from "gatsby"
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useRef, useState} from 'react';
 import { useTranslation } from "react-i18next"
 import { Flex } from 'rebass';
 import styled from 'styled-components';
@@ -21,6 +21,10 @@ const projects = [
   {
     name: 'LETSGO (NFT Marketplace)',
     link: 'https://letsgo.finance/',
+  },
+  {
+    name: 'C14 (Crypto Wallet)',
+    link: 'https://c14.money',
   },
   {
     name: 'NiftyBridge (Crypto Wallet, NFT Marketplace)',
@@ -117,7 +121,6 @@ const IndexPage = ({ location }: PageProps) => {
 
   const easterEggY = calculateEasterEggY()
 
-  console.log('DEPLOYED')
 
   if (!i18n.isInitialized) return null
 
