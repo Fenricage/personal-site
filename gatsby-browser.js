@@ -15,10 +15,4 @@ import './src/features/i18n/i18n'; // импортируем инициализ�
 // Оборачиваем все приложение в Suspense (нужно для работы i18n)
 import React, { Suspense } from 'react';
 
-export const wrapRootElement = ({ element }) => {
-    return (
-        <Suspense fallback={<div>Loading...</div>}>
-            {element}
-        </Suspense>
-    );
-};
+export const wrapRootElement = ({ element }) => element;
