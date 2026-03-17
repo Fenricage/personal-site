@@ -97,7 +97,7 @@ const HelloIcon = styled.img`
 const IndexPage = ({ location }: PageProps) => {
   const [count, setCount] = useState(0);
 
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const headerRef = useRef<HTMLElement>()
   const easterEggRef = useRef<HTMLElement>()
 
@@ -118,6 +118,8 @@ const IndexPage = ({ location }: PageProps) => {
   const easterEggY = calculateEasterEggY()
 
   console.log('DEPLOYED')
+
+  if (!i18n.isInitialized) return null
 
   return (
     <Index
