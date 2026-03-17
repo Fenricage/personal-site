@@ -12,10 +12,9 @@ import {LanguageButton} from "../features/i18n/LanguageButton";
 type BlogPageQuery = GatsbyTypes.BlogPageQuery
 
 const BlogIndex = ({ data, location }: PageProps<BlogPageQuery>) => {
-  const siteTitle = data.site?.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
 
-    const {t} = useTranslation()
+    const {t, i18n} = useTranslation()
 
   if (posts.length === 0) {
     return (
@@ -32,6 +31,8 @@ const BlogIndex = ({ data, location }: PageProps<BlogPageQuery>) => {
       </Index>
     )
   }
+
+  if (!i18n.isInitialized) return null
 
   return (
     <Index
