@@ -25,12 +25,12 @@ i18n
             escapeValue: false, // не нужно для React
         },
 
-        // настройки детектора языка
-        detection: {
-            order: ['path', 'localStorage', 'navigator'],
-            lookupFromPathIndex: 0,
-            checkWhitelist: true,
-        },
+        // // настройки детектора языка
+        // detection: {
+        //     order: ['path', 'localStorage', 'navigator'],
+        //     lookupFromPathIndex: 0,
+        //     checkWhitelist: true,
+        // },
 
         // доступные языки
         whitelist: ['ru', 'en'],
