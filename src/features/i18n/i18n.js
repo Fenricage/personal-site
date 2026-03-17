@@ -34,6 +34,9 @@ i18n
 
         // доступные языки
         whitelist: ['ru', 'en'],
+        react: {
+            useSuspense: true
+        }
     });
 
 export default i18n;
