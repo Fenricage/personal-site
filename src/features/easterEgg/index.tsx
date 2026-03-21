@@ -8,7 +8,7 @@ import {BallIcon, Wrapper, CatPaw} from "./controls";
 
 type EasterEggProps = {
     y: Nullable<number>;
-    wrapperRef?: Ref<any>;
+    wrapperRef?: Ref<HTMLElement>;
 }
 
 export const EastEgg =  (props: EasterEggProps) => {
