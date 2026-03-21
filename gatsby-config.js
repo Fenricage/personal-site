@@ -145,5 +145,13 @@ module.exports = {
         prefixDefault: false,      // Не добавлять префикс к URL для языка по умолчанию (опционально)
       },
     },
+    {
+      resolve: 'gatsby-plugin-s3',
+      options: {
+        bucketName: 'hr.protopopov.tech',
+        region: 'ru-central1',
+        customAwsEndpointHostname: 'storage.yandexcloud.net'
+      }
+    },
   ],
 }
