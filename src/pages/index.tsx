@@ -19,20 +19,28 @@ const projects = [
     link: 'https://mp.rzd.ru/',
   },
   {
-    name: 'LETSGO (NFT Marketplace)',
-    link: 'https://letsgo.finance/',
-  },
-  {
-    name: 'C14 (Crypto Wallet)',
-    link: 'https://c14.money',
-  },
-  {
     name: 'NiftyBridge (Crypto Wallet, NFT Marketplace)',
     link: 'https://wallet.niftybridge.io/',
   },
   {
-    name: '0xmessage (Blockchain messenger)',
-    link: 'https://0xmessage.com/',
+    name: 'Automation (Art Lebedev projects)',
+    link: 'https://vaizr-develop.automatus.ru',
+  },
+  {
+    name: 'Sudar (Clothing store)',
+    link: 'https://sudar.su/',
+  },
+  {
+    name: 'News 360',
+    link: 'https://360.ru',
+  },
+  {
+    name: 'Incanto',
+    link: 'https://incanto.eu',
+  },
+  {
+    name: 'Benetton (Clothing  store)',
+    link: 'https://ru.benetton.com',
   },
   {
     name: 'Securter (QR Code physical queue)',
@@ -43,20 +51,20 @@ const projects = [
     link: 'https://www.cobrainer.com',
   },
   {
-    name: 'Automation (Art Lebedev projects)',
-    link: 'https://vaizr-develop.automatus.ru',
+    name: 'LETSGO (NFT Marketplace)',
+    link: 'https://letsgo.finance/',
+  },
+  {
+    name: 'C14 (Crypto Wallet)',
+    link: 'https://c14.money',
+  },
+  {
+    name: '0xmessage (Blockchain messenger)',
+    link: 'https://0xmessage.com/',
   },
   {
     name: 'Orby (Kid clothing store)',
     link: 'https://orby.ru',
-  },
-  {
-    name: 'Benetton (Clothing  store)',
-    link: 'https://ru.benetton.com',
-  },
-  {
-    name: 'Sudar (Clothing store)',
-    link: 'https://sudar.su/',
   },
 ];
 
