@@ -1,6 +1,13 @@
 import {useTranslation} from "react-i18next";
 
-export const useLanguage = () => {
+import {AllowedLanguages} from "./types";
+
+type UseLanguage = {
+  onClickLanguage: () => void;
+  language: 'ru' | 'en'
+}
+
+export const useLanguage = (): UseLanguage => {
 
     const {i18n} = useTranslation()
 
@@ -17,6 +24,6 @@ export const useLanguage = () => {
 
     return {
         onClickLanguage,
-        language: i18n.language
+        language: i18n.language as AllowedLanguages
     }
 }
