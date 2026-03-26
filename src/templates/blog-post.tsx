@@ -1,28 +1,51 @@
-import { Link, graphql } from "gatsby"
+import { Link, graphql, type HeadFC, type PageProps } from "gatsby"
 import * as React from "react"
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next"
 
 import Bio from "../components/bio"
 import Index from "../components/layout"
 import Seo from "../components/seo"
-import {LanguageButton} from "../features/i18n/LanguageButton";
+import { LanguageButton } from "../features/i18n/LanguageButton"
+
+type AdjacentPost = {
+  fields: {
+    slug: string
+  }
+  frontmatter: {
+    title: string
+  }
+}
+
+type BlogPostData = {
+  markdownRemark: {
+    id: string
+    excerpt: string
+    html: string
+    frontmatter: {
+      title: string
+      date: string
+      description?: string | null
+    }
+  }
+  previous?: AdjacentPost | null
+  next?: AdjacentPost | null
+}
 
 const BlogPostTemplate = ({
   data: { previous, next, markdownRemark: post },
   location,
-}) => {
-
-    const {t} = useTranslation()
+}: PageProps<BlogPostData>) => {
+  const { t } = useTranslation()
 
   return (
     <Index
-        location={location}
-        languageButton={<LanguageButton/>}
-        header={
-            <Link className="header-link-home" to="/blog">
-                {t('back-to-blog')}
-            </Link>
-        }
+      location={location}
+      languageButton={<LanguageButton />}
+      header={
+        <Link className="header-link-home" to="/blog">
+          {t("back-to-blog")}
+        </Link>
+      }
     >
       <article
         className="blog-post"
@@ -72,7 +95,9 @@ const BlogPostTemplate = ({
   )
 }
 
-export const Head = ({ data: { markdownRemark: post } }) => {
+export const Head: HeadFC<BlogPostData> = ({
+  data: { markdownRemark: post },
+}) => {
   return (
     <Seo
       title={post.frontmatter.title}
