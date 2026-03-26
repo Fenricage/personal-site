@@ -10,7 +10,7 @@ import Seo from '../components/seo';
 import {EastEgg} from "../features/easterEgg";
 import {LanguageButton} from "../features/i18n/LanguageButton";
 import { IconAnimatedContainer, BlockAnimatedContainer } from '../theme/components';
-import LinkButton from '../ui-kit/LinkButton.js';
+import LinkButton from "../ui-kit/LinkButton";
 
 
 const projects = [
