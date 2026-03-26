@@ -1,6 +1,7 @@
+import { node, oneOf, string } from 'prop-types';
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
+
 import { appShape } from '../theme/shape.js';
 
 const ButtonElement = styled.button`
@@ -44,9 +45,9 @@ const Button = ({ children, type = 'button', ...props }) => (
 );
 
 Button.propTypes = {
-  children: PropTypes.node.isRequired,
-  color: PropTypes.string,
-  type: PropTypes.oneOf(['button', 'submit', 'reset']),
+  children: node.isRequired,
+  color: string,
+  type: oneOf(['button', 'submit', 'reset']),
 };
 
 export default Button;
