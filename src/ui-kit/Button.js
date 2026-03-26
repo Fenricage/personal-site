@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { gradient, shiftedGradient } from '../theme/gradients.js';
-import { appShape } from '../theme/shape.js';
+import { gradient, shiftedGradient } from '../theme/gradients';
+import { appShape } from '../theme/shape';
 
 const ButtonElement = styled.button`
   display: block;
