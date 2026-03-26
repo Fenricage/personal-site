@@ -9,7 +9,7 @@ type LayoutProps = {
     header?: Nullable<ReactNode>;
     children: ReactNode;
     location: Location;
-    headerRef?: Ref<any>
+    headerRef?: Ref<HTMLElement>
 }
 
 const Index = ({ location, languageButton, header, children, headerRef }: LayoutProps) => {

@@ -1,7 +1,8 @@
 // file: /components/LinkButton.jsx
-import React from 'react';
-import PropTypes from 'prop-types';
 import { navigate } from 'gatsby';
+import { node, string } from 'prop-types';
+import React from 'react';
+
 import Button from './Button';
 
 const LinkButton = (props) => {
@@ -23,8 +24,8 @@ const LinkButton = (props) => {
 };
 
 LinkButton.propTypes = {
-  to: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
+  to: string.isRequired,
+  children: node.isRequired,
 };
 
 export default LinkButton;

@@ -1,6 +1,4 @@
-import styled, {css, ExecutionContext} from "styled-components";
-
-import {AnimationStatus} from "./types";
+import styled, {css} from "styled-components";
 
 type BallIconProps = {
   y: number;
@@ -36,9 +34,7 @@ export const CatPaw = styled.img<CatPawProps>`
       position: absolute;
       right: 0;
       width: 60px;
-      bottom: ${(contextProps: any) => {
-        return contextProps.animate ? '0px' : '100px'
-      }};
+      bottom: ${props.animate ? '0px' : '100px'};
       transition: all ease-in-out 200ms;
   `}
 `;

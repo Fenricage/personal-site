@@ -24,8 +24,8 @@ const BlogIndex = ({ data, location }: PageProps<BlogPageQuery>) => {
       >
         <Bio />
         <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
+          No blog posts found. Add markdown posts to &quot;content/blog&quot; (or the
+          directory you specified for the &quot;gatsby-source-filesystem&quot; plugin in
           gatsby-config.js).
         </p>
       </Index>

@@ -65,6 +65,10 @@ module.exports = {
             'newlines-between': 'always',
             alphabetize: { order: 'asc', caseInsensitive: true },
         }],
+        'import/no-unresolved': 'error',
+        'react/no-unescaped-entities': 'error',
+        'import/no-named-as-default': 'off',
+        'import/no-named-as-default-member': 'off',
     },
     overrides: [
         {
