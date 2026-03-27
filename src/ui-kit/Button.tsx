@@ -1,4 +1,5 @@
 import type { ButtonHTMLAttributes, ReactNode } from "react"
+import React from "react"
 import styled from "styled-components"
 
 import { gradient, shiftedGradient } from "../theme/gradients"

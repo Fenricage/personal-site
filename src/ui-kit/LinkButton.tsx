@@ -1,5 +1,6 @@
 import { navigate } from "gatsby"
 import type { MouseEvent, ReactNode } from "react"
+import React from "react"
 
 import Button from "./Button"
 

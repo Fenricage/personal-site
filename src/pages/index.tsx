@@ -110,8 +110,8 @@ const IndexPage = ({ location }: PageProps) => {
   const [count, setCount] = useState(0);
 
   const { t, i18n } = useTranslation()
-  const headerRef = useRef<HTMLElement>()
-  const easterEggRef = useRef<HTMLElement>()
+  const headerRef = useRef<HTMLElement>(null)
+  const easterEggRef = useRef<HTMLElement>(null)
 
   useInterval(() => {
     setCount((prev) => ++prev);
