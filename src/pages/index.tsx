@@ -4,21 +4,15 @@ import React, { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flex } from 'rebass';
 
-import { BulletLinkSection } from '../components/indexPage/BulletLinkSection';
-import {
-  Block,
-  HelloIcon,
-} from '../components/indexPage/indexPageStyles';
-import Index from '../components/layout';
-import Seo from '../components/seo';
-import {
-  indexPageContacts,
-  indexPageProjects,
-} from '../data/indexPageData';
-import { EastEgg } from '../features/easterEgg';
-import { LanguageButton } from '../features/i18n/LanguageButton';
-import { BlockAnimatedContainer, IconAnimatedContainer } from '../theme/components';
-import LinkButton from '../ui-kit/LinkButton';
+import { EastEgg } from '@/features/easter-egg';
+import { LanguageButton } from '@/features/i18n/LanguageButton';
+import { indexPageContacts, indexPageProjects } from '@/shared/config/index-page-data';
+import { BlockAnimatedContainer, IconAnimatedContainer } from '@/shared/lib/theme/components';
+import LinkButton from '@/shared/ui/LinkButton';
+import Seo from '@/shared/ui/seo';
+import { BulletLinkSection } from '@/widgets/home/ui/BulletLinkSection';
+import { Block, HelloIcon } from '@/widgets/home/ui/index-page-styles';
+import Layout from '@/widgets/layout';
 
 const IndexPage = ({ location }: PageProps) => {
   const [count, setCount] = useState(0);
@@ -52,7 +46,7 @@ const IndexPage = ({ location }: PageProps) => {
   if (!i18n.isInitialized) return null;
 
   return (
-    <Index
+    <Layout
       location={location}
       languageButton={<LanguageButton />}
       headerRef={headerRef}
@@ -115,7 +109,7 @@ const IndexPage = ({ location }: PageProps) => {
           </a>
         </Block>
       </BlockAnimatedContainer>
-    </Index>
+    </Layout>
   );
 };
 

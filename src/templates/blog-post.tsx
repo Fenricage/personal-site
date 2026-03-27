@@ -1,49 +1,26 @@
-import { Link, graphql, type HeadFC, type PageProps } from "gatsby"
-import * as React from "react"
-import { useTranslation } from "react-i18next"
+import { Link, graphql, type HeadFC, type PageProps } from 'gatsby';
+import * as React from 'react';
+import { useTranslation } from 'react-i18next';
 
-import Bio from "../components/bio"
-import Index from "../components/layout"
-import Seo from "../components/seo"
-import { LanguageButton } from "../features/i18n/LanguageButton"
-
-type AdjacentPost = {
-  fields: {
-    slug: string
-  }
-  frontmatter: {
-    title: string
-  }
-}
-
-type BlogPostData = {
-  markdownRemark: {
-    id: string
-    excerpt: string
-    html: string
-    frontmatter: {
-      title: string
-      date: string
-      description?: string | null
-    }
-  }
-  previous?: AdjacentPost | null
-  next?: AdjacentPost | null
-}
+import Bio from '@/entities/author/ui/bio';
+import type { BlogPostPageData } from '@/entities/post/model/types';
+import { LanguageButton } from '@/features/i18n/LanguageButton';
+import Seo from '@/shared/ui/seo';
+import Layout from '@/widgets/layout';
 
 const BlogPostTemplate = ({
   data: { previous, next, markdownRemark: post },
   location,
-}: PageProps<BlogPostData>) => {
-  const { t } = useTranslation()
+}: PageProps<BlogPostPageData>) => {
+  const { t } = useTranslation();
 
   return (
-    <Index
+    <Layout
       location={location}
       languageButton={<LanguageButton />}
       header={
         <Link className="header-link-home" to="/blog">
-          {t("back-to-blog")}
+          {t('back-to-blog')}
         </Link>
       }
     >
@@ -91,11 +68,11 @@ const BlogPostTemplate = ({
           </li>
         </ul>
       </nav>
-    </Index>
-  )
-}
+    </Layout>
+  );
+};
 
-export const Head: HeadFC<BlogPostData> = ({
+export const Head: HeadFC<BlogPostPageData> = ({
   data: { markdownRemark: post },
 }) => {
   return (
@@ -103,10 +80,10 @@ export const Head: HeadFC<BlogPostData> = ({
       title={post.frontmatter.title}
       description={post.frontmatter.description || post.excerpt}
     />
-  )
-}
+  );
+};
 
-export default BlogPostTemplate
+export default BlogPostTemplate;
 
 export const pageQuery = graphql`
   query BlogPostBySlug(
@@ -146,4 +123,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

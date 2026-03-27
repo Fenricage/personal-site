@@ -1,13 +1,13 @@
-import type { ButtonHTMLAttributes, ReactNode } from "react"
-import React from "react"
-import styled from "styled-components"
+import type { ButtonHTMLAttributes, ReactNode } from 'react';
+import React from 'react';
+import styled from 'styled-components';
 
-import { gradient, shiftedGradient } from "../theme/gradients"
-import { appShape } from "../theme/shape"
+import { gradient, shiftedGradient } from '@/shared/lib/theme/gradients';
+import { appShape } from '@/shared/lib/theme/shape';
 
 type ButtonElementProps = {
-  color?: string
-}
+  color?: string;
+};
 
 const ButtonElement = styled.button<ButtonElementProps>`
   display: block;
@@ -21,7 +21,7 @@ const ButtonElement = styled.button<ButtonElementProps>`
   letter-spacing: 2px;
   transition: background-position ease 0.25s;
   ${gradient};
-  color: ${(props) => props.color || "rgb(255, 255, 255)"};
+  color: ${(props) => props.color || 'rgb(255, 255, 255)'};
   border-radius: ${appShape.borderRadius}px;
   font-weight: bold;
 
@@ -29,15 +29,15 @@ const ButtonElement = styled.button<ButtonElementProps>`
     box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.25);
     ${shiftedGradient};
   }
-`
+`;
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  children: ReactNode
-  color?: string
-}
+  children: ReactNode;
+  color?: string;
+};
 
 const Button = ({ children, ...props }: ButtonProps) => (
   <ButtonElement {...props}>{children}</ButtonElement>
-)
+);
 
-export default Button
+export default Button;

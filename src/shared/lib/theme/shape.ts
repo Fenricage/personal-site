@@ -1,7 +1,7 @@
 type AppShape = {
-  borderRadius: number
-}
+  borderRadius: number;
+};
 
 export const appShape: AppShape = {
   borderRadius: 6,
-}
+};

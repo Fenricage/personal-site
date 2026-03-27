@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { BlockAnimatedContainer } from '../../theme/components';
-import { Block, BulletIcon, List, ListItem } from './indexPageStyles';
+import { BlockAnimatedContainer } from '@/shared/lib/theme/components';
+
+import { Block, BulletIcon, List, ListItem } from './index-page-styles';
 
 export type BulletLinkSectionItem = {
   key: string;

@@ -7,6 +7,19 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
+/**
+ * @type {import('gatsby').GatsbyNode['onCreateWebpackConfig']}
+ */
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, 'src'),
+      },
+    },
+  })
+}
+
 // Define the template for blog post
 const blogPost = path.resolve(`./src/templates/blog-post.tsx`)
 

@@ -1,4 +1,4 @@
-import { css } from "styled-components"
+import { css } from 'styled-components';
 
 export const gradient = css`
   background: rgb(255, 255, 255);
@@ -10,7 +10,7 @@ export const gradient = css`
     #05f500 225deg,
     #9140f8 363.13deg
   );
-`
+`;
 
 export const shiftedGradient = css`
   background: rgb(255, 255, 255);
@@ -22,4 +22,4 @@ export const shiftedGradient = css`
     #05f500 225deg,
     #9140f8 363.13deg
   );
-`
+`;

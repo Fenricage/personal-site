@@ -10,7 +10,7 @@ import "./src/style.css"
 import "prismjs/themes/prism.css"
 
 
-import './src/features/i18n/i18n'; // импортируем инициализацию i18n
+import './src/app/i18n' // инициализация i18n (слой app)
 
 // Оборачиваем все приложение в Suspense (нужно для работы i18n)
 import React, { Suspense } from 'react';
