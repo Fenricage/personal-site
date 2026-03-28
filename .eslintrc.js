@@ -29,17 +29,34 @@ module.exports = {
         '@typescript-eslint',
         'jsx-a11y',
         'import',
+        'boundaries',
     ],
     settings: {
         react: {
             version: 'detect',
         },
         'import/resolver': {
-            typescript: {},
+            typescript: {
+                project: './tsconfig.json',
+            },
             node: {
                 extensions: ['.js', '.jsx', '.ts', '.tsx'],
             },
         },
+        'boundaries/root-path': 'src',
+        'boundaries/elements': [
+            { type: 'app', pattern: 'app/**/*' },
+            { type: 'shared', pattern: 'shared/**/*' },
+            { type: 'entities', pattern: 'entities/**/*' },
+            { type: 'features', pattern: 'features/**/*' },
+            { type: 'widgets', pattern: 'widgets/**/*' },
+            { type: 'pages', pattern: 'pages/**/*' },
+            { type: 'templates', pattern: 'templates/**/*' },
+        ],
+        'boundaries/ignore': [
+            '**/__generated__/**',
+            '**/locales/**',
+        ],
     },
     rules: {
         // Отключаем правило для неиспользуемого React импорта
@@ -62,9 +79,53 @@ module.exports = {
         // Правила для импортов
         'import/order': ['error', {
             groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+            pathGroups: [
+                { pattern: '@/**', group: 'internal', position: 'before' },
+            ],
+            pathGroupsExcludedImportTypes: ['builtin'],
             'newlines-between': 'always',
             alphabetize: { order: 'asc', caseInsensitive: true },
         }],
+        'boundaries/dependencies': ['error', {
+            default: 'allow',
+            rules: [
+                {
+                    from: { type: 'shared' },
+                    disallow: { to: { type: ['entities', 'features', 'widgets', 'app', 'pages', 'templates'] } },
+                },
+                {
+                    from: { type: 'entities' },
+                    disallow: { to: { type: ['features', 'widgets', 'app', 'pages', 'templates'] } },
+                },
+                {
+                    from: { type: 'features' },
+                    disallow: { to: { type: ['widgets', 'app', 'pages', 'templates'] } },
+                },
+                {
+                    from: { type: 'widgets' },
+                    disallow: { to: { type: ['app', 'pages', 'templates'] } },
+                },
+                {
+                    from: { type: 'app' },
+                    disallow: { to: { type: ['entities', 'widgets', 'pages', 'templates'] } },
+                },
+                {
+                    from: { type: 'pages' },
+                    disallow: { to: { type: ['app'] } },
+                },
+                {
+                    from: { type: 'templates' },
+                    disallow: { to: { type: ['app'] } },
+                },
+            ],
+        }],
+        'boundaries/element-types': 'off',
+        'boundaries/entry-point': 'off',
+        'boundaries/external': 'off',
+        'boundaries/no-unknown': 'off',
+        'boundaries/no-unknown-files': 'off',
+        'boundaries/no-ignored': 'off',
+        'boundaries/no-private': 'off',
         'import/no-unresolved': 'error',
         'react/no-unescaped-entities': 'error',
         'import/no-named-as-default': 'off',
