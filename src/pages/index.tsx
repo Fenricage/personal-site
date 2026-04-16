@@ -103,7 +103,7 @@ const IndexPage = ({ location }: PageProps) => {
             rel="noreferrer"
           >
             <img
-              src="https://www.codewars.com/users/Fenricage/badges/small"
+              src="https://www.codewars.com/users/Fenricage/badges/large"
               alt="codewars badge small"
             />
           </a>
