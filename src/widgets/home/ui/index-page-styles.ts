@@ -10,11 +10,18 @@ export const Block = styled.section`
 
 export const ListItem = styled.li`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   list-style: none;
   line-height: 40px;
   position: relative;
 `;
+
+export const BulletIconWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  min-height: 40px;
+`
 
 export const BulletIcon = styled.img`
   width: 20px;

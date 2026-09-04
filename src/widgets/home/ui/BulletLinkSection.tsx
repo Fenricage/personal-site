@@ -2,7 +2,7 @@ import React from 'react';
 
 import { BlockAnimatedContainer } from '@/shared/lib/theme/components';
 
-import { Block, BulletIcon, List, ListItem } from './index-page-styles';
+import { Block, BulletIcon, List, ListItem, BulletIconWrapper } from './index-page-styles';
 
 export type BulletLinkSectionItem = {
   key: string;
@@ -27,7 +27,9 @@ export const BulletLinkSection = ({
       <List>
         {items.map((item) => (
           <ListItem key={item.key}>
-            <BulletIcon src="orange-diamond.png" />
+            <BulletIconWrapper>
+              <BulletIcon src="orange-diamond.png" />
+            </BulletIconWrapper>
             <a href={item.href} target="_blank" rel="noreferrer">
               {item.label}
             </a>

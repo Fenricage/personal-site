@@ -4,6 +4,7 @@
   "index-desc-2": "I'm a React frontend developer with extensive experience. I enjoy building complex interfaces from simple, modular, and well-tested components.",
   "index-desc-3": "I pay special attention to scaling and code maintenance.",
   "index-desc-4": "My main tech stack is React, Typescript, Redux Toolkit, Cypress, React Testing Library.",
+  "index-desc-5": "Proficient in core algorithms and data structures, with a solid practice of applying Big O notation to real-world code analysis. When writing and refactoring code, I consistently account for time and space complexity ( O(1), O(N), O(N log N) ) to eliminate unnecessary computational overhead. This focus on performance enables me to build scalable frontend solutions that maintain high speed and responsiveness, even under heavy loads and when processing large datasets.",
   "index-list": "Here is a list of projects that I have completed or been involved in:",
   "index-contacts": "Here is a list of my contacts:",
   "go-to-blog": "go to blog",

@@ -72,6 +72,7 @@ const IndexPage = ({ location }: PageProps) => {
           <p>{t('index-desc-2')}</p>
           <p>{t('index-desc-3')}</p>
           <p>{t('index-desc-4')}</p>
+          <p>{t('index-desc-5')}</p>
         </Block>
       </BlockAnimatedContainer>
       <BulletLinkSection

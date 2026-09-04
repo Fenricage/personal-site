@@ -1,12 +1,9 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "protopopov blog",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "Blog powered by Gatsby and Markdown",
   "version": "0.1.0",
   "author": "Protopopov Ruslan <fenricage@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  },
   "dependencies": {
     "@fontsource-variable/montserrat": "^5.0.17",
     "@fontsource/merriweather": "^5.0.8",
