@@ -3,7 +3,7 @@ name: Build and Push Docker Image
 on:
   push:
     branches:
-      - main  # или master — ветка, при пуше в которую собираем образ
+      - master  # или master — ветка, при пуше в которую собираем образ
 
 env:
   REGISTRY: ghcr.io
